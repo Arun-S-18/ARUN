@@ -1,0 +1,51 @@
+<!DOCTYPE>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width,initial-scale-1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+        
+    </head>
+    <body>
+        <div class="container">
+            <table class="table table-stripped">
+                <thead>
+                    <tr>
+                        <th>
+                            Name
+                        </th>
+                        <th>Age</th>
+                        <th>Phone Number</th>
+                        <th>DOB</th>
+                    </tr>
+                </thead>
+                <tbody id="data">
+
+                </tbody>
+            </table>
+        </div>
+        <script>
+            fetch('https://arun111577.free.beeceptor.com').then(
+                res=>{
+                    res.json().then{
+                        data=>{
+                            console.log(data);
+                            if(data.length >0){
+                                var temp= "";
+                                data.foreach((u)=>{
+                                    temp+="<tr>";
+                                        temp+="<td>"+u.name+"</td>";
+                                        temp+="<td>"+u.age+"</td>";
+                                        temp+="<td>"+u.phone+"</td>";
+                                        temp+="<td>"+u.dob+"</td></tr>";
+                                        
+                                })
+                            }
+                        }
+                    }
+                }
+            )
+        </script>
+    </body>
+</html>
